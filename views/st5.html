@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+    }
+
+    body {
+      background-color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <img id="peter_floor" src="./peter_floor.png" class="center">
+  <img id="peter_angry" src="./peter_angry.png" class="center" style="display: none;">
+
+  <script>
+    setInterval(() => {
+      // Generate random values for red, green, and blue components between 0 and 255.
+      var x = Math.floor(Math.random() * 256);
+      var y = Math.floor(Math.random() * 256);
+      var z = Math.floor(Math.random() * 256);
+      // Construct the RGB color string.
+      var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+      // Output the generated color to the console.
+      console.log(bgColor);
+      // Set the background color of the document body to the generated color.
+      document.body.style.background = bgColor;
+    }, 1)
+
+    setTimeout(() => {
+      // show peter_angry and hide peter_floor
+      document.getElementById("peter_floor").style.display = "none";
+      document.getElementById("peter_angry").style.display = "block";
+    }, 1900);
+  </script>
+</body>
+</html>
